@@ -1,12 +1,19 @@
 <!--index.wxml-->
 <view class="container">
-  <view class="top"></view>
+  <!-- 顶部信息 -->
+  <view class="top">
+    <view class="tem">{{tem}}</view>
+    <view class="day">{{day}}</view>
+    <view class="date">{{date}}</view>
+    <view class="week">{{week}}</view>
+    <view class="wea">{{wea}}</view>
+    <view class="tem1">{{tem1}} - {{tem2}}</view>
+  </view>
+
+  <!-- 列表信息 -->
   <scroll-view class="list" scroll-y style="height:{{scrollHeight}}rpx;">
-    <view class="list_item list_item_odd"></view>
-    <view class="list_item"></view>
-    <view class="list_item list_item_odd"></view>
-    <view class="list_item"></view>
-    <view class="list_item list_item_odd"></view>
-    <view class="list_item"></view>
-  </scroll-view> 
+    <view class="{{index%2 == 0 ? 'list_item list_item_odd' : 'list_item'}}" wx:for="{{list}}" wx:key="{{index}}">
+      {{item.day}} - {{item.tem}} - {{item.wea}}
+    </view>
+  </scroll-view>
 </view>
