@@ -2,18 +2,32 @@
 <view class="container">
   <!-- 顶部信息 -->
   <view class="top">
-    <view class="tem">{{tem}}</view>
-    <view class="day">{{day}}</view>
-    <view class="date">{{date}}</view>
-    <view class="week">{{week}}</view>
-    <view class="wea">{{wea}}</view>
-    <view class="tem1">{{tem1}} - {{tem2}}</view>
+    <view class="top_info">{{city}} {{district}}</view>
+
+    <view class="top_date">{{date}}</view>
+
+    <view class="row">
+      <view class="top_tem">{{tem}}</view>
+      <view class="top_img_box">
+        <image class="top_img" src="{{src}}" lazy-load="true"></image>
+      </view>
+    </view>
+
+    <view class="row">
+      <view class="top_week">{{week}}</view>
+      <view class="top_wea">{{wea}}</view>
+    </view>
+
+    <view class="top_tem1-2">{{tem1}} - {{tem2}}</view>
   </view>
 
   <!-- 列表信息 -->
   <scroll-view class="list" scroll-y style="height:{{scrollHeight}}rpx;">
     <view class="{{index%2 == 0 ? 'list_item list_item_odd' : 'list_item'}}" wx:for="{{list}}" wx:key="{{index}}">
-      {{item.day}} - {{item.tem}} - {{item.wea}}
+      <image class="list_item_img" src="/images/black/dayu.svg" lazy-load="true"></image>
+      <view class="list_item_week">{{item.week}}</view>
+      <view class="list_item_tem1">{{item.tem1}}</view> -
+      <view class="list_item_tem2">{{item.tem2}}</view>
     </view>
   </scroll-view>
 </view>
