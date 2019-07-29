@@ -4,19 +4,13 @@ const app = getApp()
 Page({
   data: {
     scrollHeight: 0, // 滚动区域高度
-    wea: '', // 天气状况
-    src: '', // 图标
-    date: '', // 日期
-    week: '', // 星期
-    tem: '', // 当前温度
-    tem1: '', // 最高温度
-    tem2: '', // 最低温度
     city: '', // 城市
     district: '', // 地区
-    list: [], // 其余信息列表
+    today: '', // 当天信息
+    restList: [], // 剩余信息
   },
 
-  onLoad: function() {
+  onLoad() {
     //更新完成后停止下拉更新动效
     wx.stopPullDownRefresh()
 
@@ -56,21 +50,16 @@ Page({
             return util.requestPromise(api2 + cityID.id)
           })
           .then(res => {
-            let item = util.shiftArray(res.data.data) // 当天信息
-            let restList = res.data.data;
+            let today = util.shiftArray(res.data.data) // 当天信息
+            today.src = '/images/white/' + util.imageName(today.wea) // 图片路径
+
+            let restList = res.data.data; // 剩余信息
             for (let i = 0; i < restList.length; i++) {
-              restList[i].src = '/images/black/' + util.imageName(restList[i].wea)
+              restList[i].src = '/images/black/' + util.imageName(restList[i].wea) // 图片路径
             }
             that.setData({
-              wea: item.wea,
-              src: '/images/white/' + util.imageName(item.wea),
-              date: item.date,
-              day: item.day,
-              week: item.week,
-              tem: item.tem,
-              tem1: item.tem1,
-              tem2: item.tem2,
-              list: restList, // 剩余信息列表
+              today: today, // 当天信息
+              restList: restList, // 剩余信息
             })
             wx.hideLoading();
             wx.showToast({
@@ -86,7 +75,7 @@ Page({
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function() {
+  onPullDownRefresh() {
     wx.showLoading({
       title: '正在更新',
     })
@@ -109,6 +98,14 @@ Page({
       that.setData({
         scrollHeight: scrollHeight
       })
+    })
+  },
+
+  // 跳转到详情页面
+  goDetail() {
+    let query = JSON.stringify(this.data.today)
+    wx.navigateTo({
+      url: '../detail/detail?query=' + query,
     })
   },
 

@@ -9,8 +9,6 @@ page {
 
 .container {
   flex-flow: column nowrap;
-  justify-content: top;
-  align-items: top;
   width: 100%;
   height: 100%;
 }

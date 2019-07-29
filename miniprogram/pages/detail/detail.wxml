@@ -1,0 +1,30 @@
+<!--detail.wxml-->
+<view class="container">
+  <view class="top">
+    <view class="top_tem">{{today.tem}}</view>
+    <view class="top_wea">{{today.wea}}</view>
+    <view class="top_img_box">
+      <image class="top_img" src="{{today.src}}"></image>
+    </view>
+  </view>
+  <view class="main">
+    <view class="row">
+      <view class="box">
+        <view class="box_value">{{today.air_level}}</view>
+        <view class="box_title">空气质量</view>
+      </view>
+      <view class="box">
+        <view class="box_value">{{today.humidity}}</view>
+        <view class="box_title">相对湿度</view>
+      </view>
+      <view class="box">
+        <view class="box_value">{{today.win_speed}}</view>
+        <view class="box_title">风力状况</view>
+      </view>
+    </view>
+  </view>
+  <view class="bottom">
+    <view class="bottom_title">Tips:</view>
+    <view class="bottom_content">{{today.air_tips}}</view>
+  </view>
+</view>
