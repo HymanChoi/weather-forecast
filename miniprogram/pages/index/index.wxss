@@ -57,8 +57,8 @@ page {
 }
 
 .top_img {
-  width: 160rpx;
-  height: 160rpx;
+  width: 150rpx;
+  height: 150rpx;
   fill: #fff;
 }
 
@@ -94,7 +94,7 @@ page {
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
-  padding-left: 40rpx;
+  padding-left: 60rpx;
   height: 150rpx;
   background: #fff;
 }
@@ -104,23 +104,24 @@ page {
 }
 
 .list_item_img {
-  width: 80rpx;
-  height: 80rpx;
+  width: 70rpx;
+  height: 70rpx;
 }
 
 .list_item_week {
-  width: 160rpx;
-  padding-left: 60rpx;
+  width: 140rpx;
+  padding-left: 80rpx;
 }
 
 .list_item_tem1 {
+  text-align: center;
   width: 100rpx;
-  padding-left: 100rpx;
+  padding-left: 80rpx;
 }
 
 .list_item_tem2 {
+  text-align: center;
   width: 100rpx;
-  padding-left: 20rpx;
 }
 
 /* 滚动条 */

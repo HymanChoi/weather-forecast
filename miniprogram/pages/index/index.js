@@ -4,7 +4,6 @@ const app = getApp()
 Page({
   data: {
     scrollHeight: 0, // 滚动区域高度
-    list: [], // 其余信息列表
     wea: '', // 天气状况
     src: '', // 图标
     date: '', // 日期
@@ -14,9 +13,13 @@ Page({
     tem2: '', // 最低温度
     city: '', // 城市
     district: '', // 地区
+    list: [], // 其余信息列表
   },
 
   onLoad: function() {
+    //更新完成后停止下拉更新动效
+    wx.stopPullDownRefresh()
+
     let json = require('../../data/json.js')
     let util = require('../../data/util.js')
     let that = this;
@@ -36,50 +39,59 @@ Page({
         let cityID = ''; // 地区ID
 
         // 坐标逆解析
-        wx.request({
-          url: api + res.latitude + ',' + res.longitude + '&key=' + key + '&get_poi=1',
-          header: {
-            'content-type': 'application/json'
-          },
-          success(res) {
+        util.requestPromise(api + latitude + ',' + longitude + '&key=' + key + '&get_poi=1')
+          .then(res => {
             that.setData({
               city: res.data.result.ad_info.city, // 城市
               district: res.data.result.ad_info.district, // 地区
             })
 
             // 获取地区ID
-            let val1 = res.data.result.ad_info.district.replace('区', '');
-            let val2 = res.data.result.ad_info.province.replace('省', '').replace('市', '');
             cityID = json.cityID.find(x => {
-              return (x.cityZh == val1) && (x.provinceZh == val2)
+              return (x.cityZh == res.data.result.ad_info.district.replace('区', '')) &&
+                (x.provinceZh == res.data.result.ad_info.province.replace('省', '').replace('市', ''))
             })
 
             // 请求天气信息
-            wx.request({
-              url: api2 + cityID.id,
-              header: {
-                'content-type': 'application/json'
-              },
-              success(res) {
-                let item = util.shiftArray(res.data.data) // 当天信息
-                that.setData({
-                  wea: item.wea,
-                  src: '/images/white/' + util.svgName(item.wea),
-                  date: item.date,
-                  day: item.day,
-                  week: item.week,
-                  tem: item.tem,
-                  tem1: item.tem1,
-                  tem2: item.tem2,
-                  list: util.shiftArrayLeft(res.data.data), // 剩余信息列表
-                })
-                console.log(that.data.list)
-              }
+            return util.requestPromise(api2 + cityID.id)
+          })
+          .then(res => {
+            let item = util.shiftArray(res.data.data) // 当天信息
+            let restList = res.data.data;
+            for (let i = 0; i < restList.length; i++) {
+              restList[i].src = '/images/black/' + util.imageName(restList[i].wea)
+            }
+            that.setData({
+              wea: item.wea,
+              src: '/images/white/' + util.imageName(item.wea),
+              date: item.date,
+              day: item.day,
+              week: item.week,
+              tem: item.tem,
+              tem1: item.tem1,
+              tem2: item.tem2,
+              list: restList, // 剩余信息列表
             })
-          }
-        })
+            wx.hideLoading();
+            wx.showToast({
+              title: '更新成功',
+              icon: 'success',
+              duration: 2000
+            })
+          })
       }
     })
+  },
+
+  /**
+   * 页面相关事件处理函数--监听用户下拉动作
+   */
+  onPullDownRefresh: function() {
+    wx.showLoading({
+      title: '正在更新',
+    })
+    this.onLoad();
+
   },
 
   // 计算滚动区域高度

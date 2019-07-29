@@ -1,15 +1,12 @@
 // util.js
+
 // 删除当天信息
-let shiftArray = function(arr) {
+let shiftArray = arr => {
   return arr.shift();
 }
 
-// 返回剩余信息
-let shiftArrayLeft = function(arr) {
-  return arr;
-}
-
-let svgName = function(str) {
+// 返回图片名称
+let imageName = str => {
   let arr = str.split('转')
   switch (arr[0]) {
     case '暴雨':
@@ -17,6 +14,9 @@ let svgName = function(str) {
       break;
     case '大暴雨':
       return 'dabaoyu.svg';
+      break;
+    case '雷阵雨':
+      return 'leizhenyu.svg';
       break;
     case '大风':
       return 'dafeng.svg';
@@ -59,8 +59,26 @@ let svgName = function(str) {
   }
 }
 
+/**
+ * requestPromise用于将wx.request改写成Promise方式
+ * @param：{string} url 接口地址
+ * @return: Promise实例对象
+ */
+const requestPromise = url => {
+  // 返回一个Promise实例对象
+  return new Promise((resolve, reject) => {
+    wx.request({
+      url: url,
+      header: {
+        'content-type': 'application/json'
+      },
+      success: res => resolve(res)
+    })
+  })
+}
+
 module.exports = {
   shiftArray,
-  shiftArrayLeft,
-  svgName
+  imageName,
+  requestPromise
 }

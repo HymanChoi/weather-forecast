@@ -24,7 +24,7 @@
   <!-- 列表信息 -->
   <scroll-view class="list" scroll-y style="height:{{scrollHeight}}rpx;">
     <view class="{{index%2 == 0 ? 'list_item list_item_odd' : 'list_item'}}" wx:for="{{list}}" wx:key="{{index}}">
-      <image class="list_item_img" src="/images/black/dayu.svg" lazy-load="true"></image>
+      <image class="list_item_img" src="{{item.src}}" lazy-load="true"></image>
       <view class="list_item_week">{{item.week}}</view>
       <view class="list_item_tem1">{{item.tem1}}</view> -
       <view class="list_item_tem2">{{item.tem2}}</view>
