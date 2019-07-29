@@ -4,7 +4,6 @@ page {
   width: 100%;
   height: 100%;
   background: #f6f6f6;
-  overflow-y: hidden;
 }
 
 .container {
@@ -86,6 +85,7 @@ page {
 .list {
   width: 100%;
   flex: 0 0 60%;
+  overflow-y: scroll;
 }
 
 .list_item {
