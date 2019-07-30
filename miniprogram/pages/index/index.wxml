@@ -3,26 +3,36 @@
   <!-- 顶部信息 -->
   <view class="top" bindtap="goDetail">
     <view class="top_info">{{city}} {{district}}</view>
-    <view class="top_date">{{today.date}}</view>
-    <view class="row">
-      <view class="top_tem">{{today.tem}}</view>
+    <view class="top_row row">
       <view class="top_img_box">
         <image class="top_img" src="{{today.src}}" lazy-load="true"></image>
       </view>
+      <view class="top_column column">
+        <view class="top_tem">{{today.tem}}</view>
+        <view class="top_wea">{{today.wea}}</view>
+      </view>
+
     </view>
-    <view class="row">
-      <view class="top_week">{{today.week}}</view>
-      <view class="top_wea">{{today.wea}}</view>
-    </view>
-    <view class="top_tem1-2">{{today.tem2}} - {{today.tem1}}</view>
   </view>
 
-  <!-- 列表信息 -->
+  <!-- 时期列表 -->
+  <view class="hours">
+    <view class="hours_date">{{today.date}} {{today.week}}</view>
+    <view class="hours_list row">
+      <view class="hours_list_item" wx:for="{{today.hours}}" wx:key="{{index}}">
+        <view class="hours_list_item_time">{{item.time}}</view>
+        <image class="hours_list_item_src" src="{{item.src}}" lazy-load="true"></image>
+        <view class="hours_list_item_tem">{{item.tem}}</view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 星期列表 -->
   <view class="list" style="height:{{scrollHeight}}rpx;">
-    <view class="{{index%2 == 0 ? 'list_item list_item_odd' : 'list_item'}}" wx:for="{{restList}}" wx:key="{{index}}">
-      <image class="list_item_img" src="{{item.src}}" lazy-load="true"></image>
+    <view class="list_item row" wx:for="{{restList}}" wx:key="{{index}}">
       <view class="list_item_week">{{item.week}}</view>
-      <view class="list_item_tem1">{{item.tem2}}</view> -
+      <image class="list_item_img" src="{{item.src}}" lazy-load="true"></image>
+      <view class="list_item_tem1">{{item.tem2}}</view>
       <view class="list_item_tem2">{{item.tem1}}</view>
     </view>
   </view>

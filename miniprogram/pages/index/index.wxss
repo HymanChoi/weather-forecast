@@ -10,116 +10,154 @@ page {
   flex-flow: column nowrap;
   width: 100%;
   height: 100%;
+  color: #fff;
+  background: linear-gradient(#98a4ff, #52bdf7);
+}
+
+.row {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+}
+
+.column {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
 }
 
 /* 顶部样式 */
 
 .top {
   width: 100%;
-  flex: 0 0 40%;
-  background: linear-gradient(#4998e2, #87c1f1);
-  color: #fff;
+  flex: 0 0 35%;
   text-align: center;
-}
-
-.row {
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: center;
-  align-items: center;
 }
 
 .top_info {
   width: 100%;
-  height: 15%;
-  padding-top: 3%;
-  font-size: 48rpx;
-}
-
-.top_date {
-  width: 100%;
-  height: 10%;
-  font-size: 24rpx;
-}
-
-.top_tem {
-  width: 50%;
-  height: 30%;
-  font-size: 100rpx;
-}
-
-.top_img_box {
-  width: 50%;
-  height: 30%;
-}
-
-.top_img {
-  width: 150rpx;
-  height: 150rpx;
-  fill: #fff;
-}
-
-.top_week {
-  width: 50%;
-  height: 10%;
-  padding-top: 1%;
-  font-size: 36rpx;
-}
-
-.top_wea {
-  width: 50%;
-  height: 10%;
-  padding-top: 10rpx;
-  font-size: 36rpx;
-}
-
-.top_tem1-2 {
-  width: 100%;
-  height: 15%;
-  padding-top: 4%;
+  height: 60rpx;
+  line-height: 60rpx;
+  padding: 60rpx 0;
   font-size: 42rpx;
 }
 
-/* 列表样式 */
+.top_row{
+  justify-content: center;
+}
+
+.top_img_box {
+  width: 30%;
+}
+
+.top_img {
+  width: 200rpx;
+  height: 200rpx;
+  fill: #fff;
+}
+
+.top_column{
+  width: 30%;
+}
+
+.top_tem {
+  height: 120rpx;
+  line-height: 120rpx;
+  font-size: 80rpx;
+}
+
+.top_wea {
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: 48rpx;
+}
+
+/* 时期列表样式 */
+
+.hours {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  width: 100%;
+  flex: 0 0 28%;
+}
+
+.hours_date {
+  width: 80%;
+  font-size: 32rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+}
+
+.hours_list {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  width: 90%;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 10rpx;
+  font-size: 22rpx;
+  text-align: center;
+}
+
+.hours_list_item {
+  align-items: center;
+}
+
+.hours_list_item_time {
+  padding-top: 30rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+}
+
+.hours_list_item_src {
+  padding: 10rpx 0;
+  width: 48rpx;
+  height: 48rpx;
+}
+
+.hours_list_item_tem {
+  height: 40rpx;
+  line-height: 40rpx;
+  padding-bottom: 30rpx;
+}
+
+/* 星期列表样式 */
 
 .list {
   width: 100%;
-  flex: 0 0 60%;
+  flex: 0 0 37%;
   overflow-y: scroll;
 }
 
 .list_item {
-  display: flex;
-  flex-flow: row nowrap;
-  align-items: center;
-  padding-left: 60rpx;
-  height: 150rpx;
-  background: #fff;
+  width: 90%;
+  margin-left: 35rpx;
+  height: 120rpx;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
 }
 
-.list_item_odd {
-  background: #f6f9fe;
+.list_item_week {
+  width: 140rpx;
+  padding-left: 35rpx;
 }
 
 .list_item_img {
   width: 70rpx;
   height: 70rpx;
-}
-
-.list_item_week {
-  width: 140rpx;
-  padding-left: 80rpx;
+  padding-left: 155rpx;
 }
 
 .list_item_tem1 {
-  text-align: center;
   width: 100rpx;
-  padding-left: 80rpx;
+  padding-left: 50rpx;
+  opacity: 0.75;
+  text-align: center;
 }
 
 .list_item_tem2 {
-  text-align: center;
   width: 100rpx;
+  text-align: center;
 }
 
 /* 滚动条 */

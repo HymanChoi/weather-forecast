@@ -53,15 +53,20 @@ Page({
           .then(res => {
             let today = util.shiftArray(res.data.data) // 当天信息
             today.src = '/images/white/' + util.imageName(today.wea) // 图片路径
+            for(let i=0; i<today.hours.length; i++){
+              today.hours[i].time = util.time(today.hours[i].day);
+              today.hours[i].src = '/images/white/' + util.imageName(today.hours[i].wea)
+            }
 
             let restList = res.data.data; // 剩余信息
             for (let i = 0; i < restList.length; i++) {
-              restList[i].src = '/images/black/' + util.imageName(restList[i].wea) // 图片路径
+              restList[i].src = '/images/white/' + util.imageName(restList[i].wea) // 图片路径
             }
             that.setData({
               today: today, // 当天信息
               restList: restList, // 剩余信息
             })
+            console.log(today)
             wx.hideLoading();
             wx.showToast({
               title: '更新成功',

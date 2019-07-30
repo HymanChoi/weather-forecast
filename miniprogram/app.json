@@ -4,9 +4,9 @@
     "pages/detail/detail"
   ],
   "window": {
-    "backgroundColor": "#4998e2",
+    "backgroundColor": "#98a4ff",
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#4584d1",
+    "navigationBarBackgroundColor": "#98a4ff",
     "navigationBarTitleText": "天气先生",
     "navigationBarTextStyle": "white",
     "enablePullDownRefresh": true

@@ -5,6 +5,12 @@ let shiftArray = arr => {
   return arr.shift();
 }
 
+// 获取时间
+let time = str =>{
+  let arr = str.split('日')
+  return arr[1]
+}
+
 // 返回图片名称
 let imageName = str => {
   let arr = str.split('转')
@@ -79,6 +85,7 @@ const requestPromise = url => {
 
 module.exports = {
   shiftArray,
+  time,
   imageName,
   requestPromise
 }
