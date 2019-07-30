@@ -1,6 +1,6 @@
 //index.js
 const app = getApp()
-
+// 页面的初始数据
 Page({
   data: {
     scrollHeight: 0, // 滚动区域高度
@@ -10,13 +10,14 @@ Page({
     restList: [], // 剩余信息
   },
 
+  // 生命周期函数--监听页面加载
   onLoad() {
-    //更新完成后停止下拉更新动效
-    wx.stopPullDownRefresh()
-
     let json = require('../../data/json.js')
     let util = require('../../data/util.js')
     let that = this;
+
+    //更新完成后停止下拉更新动效
+    wx.stopPullDownRefresh()
 
     // 计算滑动高度
     this.calcScrollHeight();
@@ -72,9 +73,7 @@ Page({
     })
   },
 
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
+  // 页面相关事件处理函数--监听用户下拉动作
   onPullDownRefresh() {
     wx.showLoading({
       title: '正在更新',
@@ -87,7 +86,7 @@ Page({
   calcScrollHeight() {
     let that = this;
     let query = wx.createSelectorQuery().in(this);
-    query.select('.top').boundingClientRect(function(res) {
+    query.select('.top').boundingClientRect(function (res) {
       // top高度
       let topHeight = res.height;
       // 屏幕高度

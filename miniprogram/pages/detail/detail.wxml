@@ -1,5 +1,5 @@
 <!--detail.wxml-->
-<view class="container" style="background-image: url('../../images/bg2.jpg');">
+<view class="container">
   <view class="top">
     <view class="top_tem">{{today.tem}}</view>
     <view class="top_wea">{{today.wea}}</view>
