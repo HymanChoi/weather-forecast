@@ -13,7 +13,6 @@ page {
   flex-flow: column nowrap;
   width: 100%;
   height: 100%;
-  /* background: linear-gradient(#4998e2, #87c1f1); */
   background-repeat: no-repeat;
   background-size: 100% 100%;
   -moz-background-size: 100% 100%;
