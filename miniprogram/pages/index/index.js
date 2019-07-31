@@ -66,7 +66,6 @@ Page({
               today: today, // 当天信息
               restList: restList, // 剩余信息
             })
-            console.log(today)
             wx.hideLoading();
             wx.showToast({
               title: '更新成功',
