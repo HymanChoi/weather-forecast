@@ -53,7 +53,7 @@ Page({
           .then(res => {
             let today = util.shiftArray(res.data.data) // 当天信息
             today.src = '/images/white/' + util.imageName(today.wea) // 图片路径
-            for(let i=0; i<today.hours.length; i++){
+            for (let i = 0; i < today.hours.length; i++) {
               today.hours[i].time = util.time(today.hours[i].day);
               today.hours[i].src = '/images/white/' + util.imageName(today.hours[i].wea)
             }
@@ -74,6 +74,14 @@ Page({
               duration: 2000
             })
           })
+      },
+      fail() {
+        wx.hideLoading();
+        wx.showToast({
+          title: '加载失败',
+          icon: 'none',
+          duration: 2000
+        })
       }
     })
   },
@@ -91,7 +99,7 @@ Page({
   calcScrollHeight() {
     let that = this;
     let query = wx.createSelectorQuery().in(this);
-    query.select('.top').boundingClientRect(function (res) {
+    query.select('.top').boundingClientRect(function(res) {
       // top高度
       let topHeight = res.height;
       // 屏幕高度
