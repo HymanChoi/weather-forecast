@@ -1,30 +1,59 @@
 <!--detail.wxml-->
 <view class="container">
   <view class="top">
-    <view class="top_tem">{{today.tem}}</view>
-    <view class="top_wea">{{today.wea}}</view>
-    <view class="top_img_box">
-      <image class="top_img" src="{{today.src}}"></image>
-    </view>
-  </view>
-  <view class="main">
-    <view class="row">
-      <view class="box">
-        <view class="box_value">{{today.air_level}}</view>
-        <view class="box_title">空气质量</view>
+    <view class="top_row row">
+      <view class="top_img_box">
+        <image class="top_img" src="{{today.src}}" lazy-load="true"></image>
       </view>
-      <view class="box">
-        <view class="box_value">{{today.humidity}}</view>
-        <view class="box_title">相对湿度</view>
-      </view>
-      <view class="box">
-        <view class="box_value">{{today.win_speed}}</view>
-        <view class="box_title">风力状况</view>
+      <view class="top_column column">
+        <view class="top_tem">{{today.tem}}</view>
+        <view class="top_wea">{{today.wea}}</view>
       </view>
     </view>
   </view>
-  <view class="bottom">
-    <view class="bottom_title">Tips:</view>
-    <view class="bottom_content">{{today.air_tips}}</view>
+  <view class="detail">
+    <view class="detail_tip">
+      <view class="detail_tip_content">Tips: {{today.air_tips}}</view>
+    </view>
+    <view class="detail_row row">
+      <view class="detail_box">
+        <view class="detail_title">空气质量</view>
+        <view class="detail_content">{{today.air_level}}</view>
+      </view>
+      <view class="detail_box">
+        <view class="detail_title">空气湿度</view>
+        <view class="detail_content">{{today.humidity}}</view>
+      </view>
+    </view>
+    <view class="detail_row row">
+      <view class="detail_box">
+        <view class="detail_title">风向状况</view>
+        <view class="detail_content">{{today.win[0]}}</view>
+      </view>
+      <view class="detail_box">
+        <view class="detail_title">风力状况</view>
+        <view class="detail_content">{{today.win_speed}}</view>
+      </view>
+    </view>
+    <view class="detail_row row">
+      <view class="detail_box">
+        <view class="detail_title">{{today.index[0].title}}</view>
+        <view class="detail_content">{{today.index[0].level}}</view>
+      </view>
+      <view class="detail_box">
+        <view class="detail_title">{{today.index[2].title}}</view>
+        <view class="detail_content">{{today.index[2].level}}</view>
+      </view>
+    </view>
+    <view class="detail_row row">
+      <view class="detail_box">
+        <view class="detail_title">{{today.index[3].title}}</view>
+        <view class="detail_content">{{today.index[3].level}}</view>
+      </view>
+      <view class="detail_box">
+        <view class="detail_title">{{today.index[4].title}}</view>
+        <view class="detail_content">{{today.index[4].level}}</view>
+      </view>
+    </view>
   </view>
 </view>

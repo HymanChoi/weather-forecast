@@ -11,7 +11,6 @@
         <view class="top_tem">{{today.tem}}</view>
         <view class="top_wea">{{today.wea}}</view>
       </view>
-
     </view>
   </view>
 

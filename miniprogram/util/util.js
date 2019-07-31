@@ -11,7 +11,11 @@ let time = str =>{
   return arr[1]
 }
 
-// 返回图片名称
+/**
+ * 返回图片名称
+ * @param:{string} str 天气状况
+ * @return: 图片名称
+ */
 let imageName = str => {
   let arr = str.split('转')
   switch (arr[0]) {

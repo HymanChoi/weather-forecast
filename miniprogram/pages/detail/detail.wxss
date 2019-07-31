@@ -4,9 +4,7 @@ page {
   width: 100%;
   height: 100%;
   background: #f6f6f6;
-  color: #fff;
   overflow-y: hidden;
-  text-align: center;
 }
 
 .container {
@@ -14,6 +12,8 @@ page {
   width: 100%;
   height: 100%;
   background: linear-gradient(#98a4ff, #52bdf7);
+  color: #fff;
+  text-align: center;
 }
 
 .row {
@@ -22,76 +22,97 @@ page {
   align-items: center;
 }
 
+.column {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+}
+
+/* 顶部样式 */
+
 .top {
   width: 100%;
-  flex: 0 0 60%;
-  text-align: center;
+  flex: 0 0 24%;
+}
+
+.top_row {
+  justify-content: center;
+  padding-top: 40rpx; 
+}
+
+.top_img_box {
+  width: 30%;
+}
+
+.top_img {
+  width: 200rpx;
+  height: 200rpx;
+}
+
+.top_column {
+  width: 30%;
 }
 
 .top_tem {
-  width: 100%;
-  height: 100rpx;
-  line-height: 100rpx;
-  padding-top: 100rpx;
+  height: 120rpx;
+  line-height: 120rpx;
   font-size: 80rpx;
 }
 
 .top_wea {
-  width: 100%;
   height: 60rpx;
   line-height: 60rpx;
-  padding-top: 32rpx;
   font-size: 48rpx;
 }
 
-.top_img_box {
+/* 详情样式 */
+
+.detail {
   width: 100%;
-  padding-top: 56rpx;
-}
-
-.top_img {
-  width: 240rpx;
-  height: 240rpx;
-}
-
-.main {
-  width: 100%;
-  flex: 0 0 20%;
-}
-
-.box {
-  flex: 1;
+  flex: 0 0 76%;
+  display: flex;
   flex-flow: column nowrap;
-  margin: 0 10rpx;
-  height: 230rpx;
-  border: 1px solid #f6f6f6;
+  align-items: center;
+}
+
+.detail_tip {
+  width: 90%;
+  height: 160rpx;
+  background: rgba(255, 255, 255, 0.15);
   border-radius: 10rpx;
 }
 
-.box_value {
-  height: 145rpx;
-  line-height: 145rpx;
-  font-size: 60rpx;
-}
-
-.box_title {
-  height: 70rpx;
-  line-height: 70rpx;
-  font-size: 36rpx;
-}
-
-.bottom {
-  width: 100%;
-  flex: 0 0 20%;
-  padding-left: 40rpx;
+.detail_tip_content {
+  padding: 30rpx;
+  font-size: 32rpx;
   text-align: left;
 }
 
-.bottom_title {
-  font-size: 36rpx;
-  padding: 14px 0rpx;
+.detail_row {
+  width: 90%;
+  justify-content: space-between;
+  margin-top: 30rpx;
 }
 
-.bottom_content {
-  font-size: 28rpx;
+.detail_box {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  width: 48%;
+  height: 150rpx;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 10rpx;
+}
+
+.detail_title {
+  height: 60rpx;
+  line-height: 60rpx;
+  opacity: 0.75;
+  font-size: 32rpx;
+}
+
+.detail_content {
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: 42rpx;
 }
