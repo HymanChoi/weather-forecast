@@ -32,7 +32,7 @@ page {
 
 .top {
   width: 100%;
-  flex: 0 0 24%;
+  flex: 0 0 25%;
 }
 
 .top_row {
@@ -50,7 +50,7 @@ page {
 }
 
 .top_column {
-  width: 30%;
+  min-width: 30%;
 }
 
 .top_tem {
@@ -62,14 +62,14 @@ page {
 .top_wea {
   height: 60rpx;
   line-height: 60rpx;
-  font-size: 48rpx;
+  font-size: 42rpx;
 }
 
 /* 详情样式 */
 
 .detail {
   width: 100%;
-  flex: 0 0 76%;
+  flex: 0 0 75%;
   display: flex;
   flex-flow: column nowrap;
   align-items: center;

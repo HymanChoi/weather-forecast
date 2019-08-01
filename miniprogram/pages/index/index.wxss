@@ -56,7 +56,7 @@ page {
 }
 
 .top_column{
-  width: 30%;
+  min-width: 30%;
 }
 
 .top_tem {
@@ -68,7 +68,7 @@ page {
 .top_wea {
   height: 60rpx;
   line-height: 60rpx;
-  font-size: 48rpx;
+  font-size: 42rpx;
 }
 
 /* 时期列表样式 */
