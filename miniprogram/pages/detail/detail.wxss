@@ -114,5 +114,5 @@ page {
 .detail_content {
   height: 60rpx;
   line-height: 60rpx;
-  font-size: 42rpx;
+  font-size: 36rpx;
 }
