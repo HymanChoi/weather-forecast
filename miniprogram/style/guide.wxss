@@ -1,6 +1,0 @@
-page {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  background: #f6f6f6;
-}

@@ -3,7 +3,7 @@
   <view class="top">
     <view class="top_row row">
       <view class="top_img_box">
-        <image class="top_img" src="{{today.src}}" lazy-load="true"></image>
+        <image class="top_img" src="{{today.src}}" lazy-load="true" mode="aspectFit"></image>
       </view>
       <view class="top_column column">
         <view class="top_tem">{{today.tem}}</view>

@@ -1,5 +1,6 @@
 //index.js
 const app = getApp()
+
 // 页面的初始数据
 Page({
   data: {
