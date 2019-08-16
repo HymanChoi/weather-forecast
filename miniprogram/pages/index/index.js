@@ -92,7 +92,6 @@ Page({
       title: '正在更新',
     })
     this.onLoad();
-
   },
 
   // 计算滚动区域高度
@@ -119,6 +118,5 @@ Page({
     wx.navigateTo({
       url: '../detail/detail?query=' + query,
     })
-  },
-
+  }
 })
