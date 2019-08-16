@@ -12,8 +12,8 @@ Page({
 
   // 生命周期函数--监听页面加载
   onLoad() {
-    let json = require('../../util/json.js')
-    let util = require('../../util/util.js')
+    let json = require('../../utils/json.js')
+    let util = require('../../utils/util.js')
     let that = this;
 
     //更新完成后停止下拉更新动效
