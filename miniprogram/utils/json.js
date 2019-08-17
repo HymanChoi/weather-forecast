@@ -1,5 +1,5 @@
 // json.js
-let cityID = [{
+var cityID = [{
     "id": "101010100",
     "cityEn": "beijing",
     "cityZh": "\u5317\u4eac",
