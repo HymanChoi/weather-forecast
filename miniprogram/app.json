@@ -7,9 +7,9 @@
     "backgroundColor": "#98a4ff",
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#98a4ff",
-    "navigationBarTitleText": "記得擔遮",
+    "navigationBarTitleText": "睇天气",
     "navigationBarTextStyle": "white",
-    "enablePullDownRefresh": true
+    "enablePullDownRefresh": false
   },
   "sitemapLocation": "sitemap.json",
   "permission": {
