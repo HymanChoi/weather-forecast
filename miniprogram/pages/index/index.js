@@ -1,6 +1,3 @@
-//index.js
-const app = getApp()
-
 // 页面的初始数据
 Page({
   data: {
@@ -98,7 +95,7 @@ Page({
   calcScrollHeight() {
     let that = this;
     let query = wx.createSelectorQuery().in(this);
-    query.select('.top').boundingClientRect(function(res) {
+    query.select('.top').boundingClientRect(function (res) {
       // top高度
       let topHeight = res.height;
       // 屏幕高度
