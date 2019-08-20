@@ -10,3 +10,7 @@
 2. 点击首页顶部，进入详情页。
 3. 上下滑动底部列表，查看未来天气信息。
 4. 下拉页面，刷新当前信息。
+
+#### 项目展示
+![睇天气-首页.png](https://i.loli.net/2019/08/20/sWG3yKmCqFrEYO2.png)
+![睇天气-详情页.png](https://i.loli.net/2019/08/20/EHxAVP3NsLdri72.png)
