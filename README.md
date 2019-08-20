@@ -13,6 +13,6 @@
 
 #### 项目展示
 <figure class="half">
-<img src="https://i.loli.net/2019/08/20/sWG3yKmCqFrEYO2.png" width="300px" />
-<img src="https://i.loli.net/2019/08/20/EHxAVP3NsLdri72.png" width="300px" />
+<img src="https://i.loli.net/2019/08/20/sWG3yKmCqFrEYO2.png" width="250px" />
+<img src="https://i.loli.net/2019/08/20/EHxAVP3NsLdri72.png" width="250px" />
 </figure>
