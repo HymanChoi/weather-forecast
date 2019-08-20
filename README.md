@@ -12,5 +12,8 @@
 4. 下拉页面，刷新当前信息。
 
 #### 项目展示
-![睇天气-首页.png](https://i.loli.net/2019/08/20/sWG3yKmCqFrEYO2.png)
-![睇天气-详情页.png](https://i.loli.net/2019/08/20/EHxAVP3NsLdri72.png)
+1. 首页
+<img src="https://i.loli.net/2019/08/20/sWG3yKmCqFrEYO2.png" width="375px" />
+
+2. 详情页
+<img src="https://i.loli.net/2019/08/20/EHxAVP3NsLdri72.png" width="375px" />
