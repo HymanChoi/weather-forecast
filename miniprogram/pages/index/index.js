@@ -29,6 +29,8 @@ Page({
         const key = 'B3OBZ-V32C6-JXYSJ-MCLN6-PA7ZF-VAFQY'; // 腾讯地图key
         const api = 'https://apis.map.qq.com/ws/geocoder/v1/?location='; // 腾讯地图API
         const api2 = 'https://www.tianqiapi.com/api/?version=v1&cityid='; // 天气API
+        const appid = '76298151';
+        const appsecret = 'XbQRTgb4';
         let cityID = ''; // 地区ID
 
         // 坐标逆解析
@@ -46,7 +48,7 @@ Page({
             })
 
             // 请求天气信息
-            return util.requestPromise(api2 + cityID.id)
+            return util.requestPromise(api2 + cityID.id + "&appid=" + appid + "&appsecret=" + appsecret)
           })
           .then(res => {
             let today = util.shiftArray(res.data.data) // 当天信息
