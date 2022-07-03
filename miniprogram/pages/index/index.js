@@ -54,7 +54,7 @@ Page({
             let today = util.shiftArray(res.data.data) // 当天信息
             today.src = '/images/icon/' + util.imageName(today.wea) // 图片路径
             for (let i = 0; i < today.hours.length; i++) {
-              today.hours[i].time = util.time(today.hours[i].day);
+              today.hours[i].time = today.hours[i].hours;
               today.hours[i].src = '/images/icon/' + util.imageName(today.hours[i].wea)
             }
 

@@ -6,7 +6,7 @@ let shiftArray = arr => {
 }
 
 // 获取时间
-let time = str =>{
+let time = str => {
   let arr = str.split('日')
   return arr[1]
 }

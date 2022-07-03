@@ -21,7 +21,7 @@
       <view class="hours_list_item" wx:for="{{today.hours}}" wx:key="{{index}}">
         <view class="hours_list_item_time">{{item.time}}</view>
         <image class="hours_list_item_src" src="{{item.src}}" lazy-load="true" mode="aspectFit"></image>
-        <view class="hours_list_item_tem">{{item.tem}}</view>
+        <view class="hours_list_item_tem">{{item.tem}}˚C</view>
       </view>
     </view>
   </view>

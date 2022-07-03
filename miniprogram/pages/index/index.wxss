@@ -90,16 +90,16 @@ page {
 
 .hours_list {
   display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-around;
+  flex-direction: row;
   width: 90%;
   background: rgba(255, 255, 255, 0.15);
   border-radius: 10rpx;
   font-size: 22rpx;
-  text-align: center;
+  overflow-x: auto;
 }
 
 .hours_list_item {
+  padding: 0 18px;
   align-items: center;
 }
 
